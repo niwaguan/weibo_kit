@@ -29,6 +29,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'io.github.v7lin.weibo_kit'
     compileSdkVersion 31
 
     compileOptions {
@@ -59,5 +60,5 @@ android {
 
 dependencies {
     vendorImplementation 'androidx.appcompat:appcompat:1.0.0'
-    vendorImplementation 'io.github.sinaweibosdk:core:12.5.0@aar'
+    vendorImplementation 'io.github.sinaweibosdk:core:13.10.1@aar'
 }

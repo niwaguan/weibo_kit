@@ -1,5 +1,5 @@
 #import "WeiboKitPlugin.h"
-#import <Weibo_SDK/WeiboSDK.h>
+#import "weibo_kit/WeiboSDK.h"
 
 @interface WeiboKitPlugin () <WeiboSDKDelegate>
 

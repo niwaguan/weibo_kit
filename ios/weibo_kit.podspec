@@ -25,8 +25,14 @@ A powerful Flutter plugin allowing developers to auth/share with natvie Android 
   # v3.3.0
   s.static_framework = true
   s.subspec 'vendor' do |sp|
-    sp.dependency 'Weibo_SDK', '~> 3.3.0'
+    sp.requires_arc = false
+    sp.source_files = 'Libraries/libWeiboSDK/*.{h,m}'
+    sp.resource     = 'Libraries/libWeiboSDK/WeiboSDK.bundle'
+    sp.vendored_libraries  = 'Libraries/libWeiboSDK/libWeiboSDK.a'
+    sp.frameworks   = 'Photos', 'ImageIO', 'SystemConfiguration', 'CoreText', 'QuartzCore', 'Security', 'UIKit', 'Foundation', 'CoreGraphics','CoreTelephony','WebKit'
+    sp.libraries = 'sqlite3', 'z'
   end
+  s.default_subspec = 'vendor'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
